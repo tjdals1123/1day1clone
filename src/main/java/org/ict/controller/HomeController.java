@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 /**
  * Handles requests for the application home page.
  */
@@ -37,9 +38,49 @@ public class HomeController {
 		return "home";
 	}
 	
-	@GetMapping("/test")
+	@GetMapping("/ajaxtest")
 	public void ajaxTest() {
 		
 	}
 	
+	@RequestMapping(value="/doA", method=RequestMethod.GET)
+	public String doA(Locale locale, Model model) {
+		
+		System.out.println("doA..............");
+		
+		
+		return "home";
+	}
+	
+	@RequestMapping(value="/doB", method=RequestMethod.GET)
+	public String doB(Locale locale, Model model) {
+		
+		System.out.println("doB...............");
+		
+		model.addAttribute("result", "doB RESULT");
+		
+		return "home";
+		
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

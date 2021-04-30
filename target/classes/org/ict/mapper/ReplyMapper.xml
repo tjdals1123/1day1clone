@@ -28,6 +28,17 @@
 		WHERE rno = #{rno}
 	</delete>
 	
+	<select id = "getListPage" resultType ="org.ict.domain.ReplyVO">
+		SELECT * FROM ictreply
+			WHERE bno = #{bno}
+			ORDER BY rno DESC
+			LIMIT #{cri.pageStart}, #{cri.number}
+	</select>
+	
+	<select id = "count" resultType="int">
+		SELECT count(rno) from ictreply
+			WHERE bno = #{bno}
+	</select>
 	
 	
 

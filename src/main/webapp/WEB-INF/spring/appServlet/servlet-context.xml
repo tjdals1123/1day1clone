@@ -23,6 +23,20 @@
 	
 	<context:component-scan base-package="org.ict.controller" />
 	
+	<beans:bean id = "sampleInterceptor" class="org.ict.interceptor.SampleInterceptor"></beans:bean>
 	
+	<interceptors>
+		<interceptor>
+			<mapping path="/doA" />
+			<mapping path="/doB" />
+			<beans:ref bean = "sampleInterceptor" />
+		</interceptor>
+	</interceptors>
 	
 </beans:beans>
+
+
+
+
+
+

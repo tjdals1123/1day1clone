@@ -28,3 +28,19 @@ public interface BoardService {
 	public int searchCountPageNum(SearchCriteria search);
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
