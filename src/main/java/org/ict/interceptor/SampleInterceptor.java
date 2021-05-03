@@ -9,20 +9,19 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-
 public class SampleInterceptor extends HandlerInterceptorAdapter{
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		
-		System.out.println("pre handle..............");
+		System.out.println("pre handle.......");
 		
 		HandlerMethod method = (HandlerMethod)handler;
 		Method methodObj = method.getMethod();
 		
 		System.out.println("Bean: " + method.getBean());
-		System.out.println("Metod: " + methodObj);
+		System.out.println("Method: " + methodObj);
 		
 		return true;
 	}
@@ -31,7 +30,7 @@ public class SampleInterceptor extends HandlerInterceptorAdapter{
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
 		
-		System.out.println("post handler.........");
+		System.out.println("post handle.............");
 		
 		Object result = modelAndView.getModel().get("result");
 		
@@ -45,6 +44,15 @@ public class SampleInterceptor extends HandlerInterceptorAdapter{
 	
 	
 }
+
+
+
+
+
+
+
+
+
 
 
 

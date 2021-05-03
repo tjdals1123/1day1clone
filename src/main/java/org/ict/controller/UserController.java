@@ -1,17 +1,18 @@
 package org.ict.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import javax.servlet.http.HttpSession;
 
 import org.ict.domain.LoginDTO;
 import org.ict.domain.UserVO;
 import org.ict.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/user/*")
@@ -25,20 +26,19 @@ public class UserController {
 		
 	}
 	
-	@PostMapping("loginPost")
-	public void loginPost(LoginDTO dto, HttpSession session, Model model) throws Exception{
+	@PostMapping("/loginPost")
+	public void loginPost(LoginDTO dto, HttpSession session, Model model) throws Exception {
 		
 		UserVO vo = service.login(dto);
 		
 		if(vo == null) {
-			
 			return;
 		}
-		
 		model.addAttribute("userVO", vo);
-		
 	}
 }
+
+
 
 
 

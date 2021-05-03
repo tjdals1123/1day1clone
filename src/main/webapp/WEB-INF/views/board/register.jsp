@@ -24,7 +24,7 @@
 		<hr>
 		<div class="row mb-3">
 			<div class="col-lg-1">글쓴이</div>
-			<div class="col-lg-11"><input type="text" class="form-control" id="writer" name="writer"></div>
+			<div class="col-lg-11"><input type="text" class="form-control" id="writer" name="writer" value="${login.uid}" readonly></div>
 		</div>
 		<hr>
 		<div class="row mb-3">

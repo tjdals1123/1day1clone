@@ -7,6 +7,6 @@ public class LoginDTO {
 
 	private String uid;
 	private String upw;
-	private Boolean useCookie;
+	private boolean useCookie;
 	
 }
